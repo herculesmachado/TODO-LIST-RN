@@ -1,10 +1,21 @@
+import useTheme, { ThemeProvider } from '@/hooks/useTheme';
 import { Ionicons as IonIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 
 export default function TabsLayout() {
- return (   
+ const {colors} = useTheme();
+    return (
    <Tabs
     screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textMuted,
+
+        tabBarStyle: {
+            backgroundColor: colors.surface,
+            
+        }
+        
     }}
    >
     <Tabs.Screen
